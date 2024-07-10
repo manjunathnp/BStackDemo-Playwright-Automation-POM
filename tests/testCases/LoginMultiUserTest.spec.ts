@@ -4,7 +4,7 @@ import path from 'path';
 import { parse } from 'csv-parse/sync';
 
 // Read and parse the CSV file
-const csvFilePath = path.join('./testData','multiUserCreds.csv');
+const csvFilePath = path.join('./TestData','multiUserCreds.csv');
 const records = parse(fs.readFileSync(csvFilePath, 'utf-8'), {
     columns: true,
     skip_empty_lines: true
