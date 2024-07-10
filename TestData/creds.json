@@ -1,0 +1,7 @@
+{
+    "appBaseURL": "https://bstackdemo.com/",
+    "pageTitle": "StackDemo", 
+    "appSignInURL": "https://bstackdemo.com/signin",
+    "demoUsername": "demouser",
+    "password": "testingisfun99"
+}
