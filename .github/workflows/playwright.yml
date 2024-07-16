@@ -89,14 +89,22 @@ jobs:
         name: allure-results
         path: allure-results
 
+    - name: Prepare Allure Report for GitHub Pages
+      if: success()
+      run: |
+        REPORT_DIR=allure-report-${{ github.sha }}
+        mv allure-report $REPORT_DIR
+        echo "Report Directory: $REPORT_DIR"
+
     - name: Deploy Allure Report to GitHub Pages
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.GH_PAGES_TOKEN }}
-        publish_dir: ./allure-report
+        publish_dir: ./allure-report-${{ github.sha }}
         publish_branch: gh-pages
         cname: allure-report
+        keep_files: true
 
     - name: Display Allure Report URL
       run: |
