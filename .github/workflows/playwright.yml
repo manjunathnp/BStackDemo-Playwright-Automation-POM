@@ -12,8 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
 
@@ -40,7 +43,8 @@ jobs:
       - name: Prepare Allure Report for GitHub Pages
         if: success()
         run: |
-          REPORT_DIR=allure-report-${{ github.sha }}
+          TIMESTAMP=$(date +'%Y%m%d%H%M%S')
+          REPORT_DIR=allure-report-$TIMESTAMP
           mv allure-report $REPORT_DIR
           echo "Report Directory: $REPORT_DIR"
 
@@ -51,15 +55,8 @@ jobs:
           personal_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./allure-report-${{ github.sha }}
           publish_branch: gh-pages
-          cname: allure-report
           keep_files: true
 
       - name: Display Allure Report URL
         run: |
-          echo "Allure Report URL: https://manjunathnp.github.io/Playwright-AutomationFramework-POM/allure-report-${{ github.sha }}/index.html"
-
-      - name: Debug - List Files in gh-pages Branch
-        if: always()
-        run: |
-          git clone --single-branch --branch gh-pages https://github.com/manjunathnp/Playwright-AutomationFramework-POM.git gh-pages
-          ls -R gh-pages
+          echo "Allure Report URL: https://manjunathnp.github.io/BStackDemo-Playwright-Automation-POM/allure-report-${{ github.sha }}/index.html"
