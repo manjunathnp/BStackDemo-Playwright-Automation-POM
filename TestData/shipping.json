@@ -1,8 +1,0 @@
-{
-    "firstName": "Test",
-    "lastName": "User",
-    "address": "789 Sample Ave",
-    "state": "TX",
-    "zip": "98765",
-    "successMsg": "Your Order has been successfully placed."
-  }
