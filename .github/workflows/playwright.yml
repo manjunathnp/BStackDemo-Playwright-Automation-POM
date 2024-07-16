@@ -1,4 +1,4 @@
-name: Allure Report Integration
+name: BStack-Demo Allure Report Integration
 
 on:
   push:
