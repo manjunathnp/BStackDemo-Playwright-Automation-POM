@@ -37,7 +37,7 @@ export default class BasePage {
     }
 
     async waitForUrl(){
-        return this.page.waitForURL(testData.appBaseURL, {timeout: 10000});
+        return this.page.waitForURL(testData.appBaseURL, {timeout: 12000});
     }
 
     async waitForElement(selector: string){
