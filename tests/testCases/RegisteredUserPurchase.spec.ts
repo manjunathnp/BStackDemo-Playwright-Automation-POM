@@ -14,7 +14,7 @@ test.describe('Registered User Purchase Item Test', () => {
                         shipping.address, shipping.state, 
                         shipping.zip);
         
-        expect(await confirmationPage.orderSuccessMsgDisplayed()).toBe(shipping.successMsg);
+        expect.soft(await confirmationPage.orderSuccessMsgDisplayed()).toBe(shipping.successMsg);
     
     });
     
@@ -30,6 +30,6 @@ test.describe('Registered User Purchase Item Test', () => {
             shipping.address, shipping.state, 
             shipping.zip);
         
-        expect(await confirmationPage.orderSuccessMsgDisplayed()).toBe(shipping.successMsg);
+        expect.soft(await confirmationPage.orderSuccessMsgDisplayed()).toBe(shipping.successMsg);
     });    
 });
