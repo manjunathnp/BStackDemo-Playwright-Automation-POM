@@ -12,7 +12,6 @@ export class LoginPage extends BasePage {
         this.usernameTxtFld = page.locator('div').filter({ hasText: /^Select Username$/ }).nth(2);
         this.passwordTxtFld = page.locator('div').filter({ hasText: /^Select Password$/ }).nth(2);
         this.loginButton = page.getByRole('button', { name: 'Log In' });
-        // this.loginErrorMsg = page.getByRole('heading', {name: 'Your account has been locked.'});
         this.loginErrorMsg = page.locator('[class="api-error"]');
 
     }

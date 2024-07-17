@@ -7,11 +7,7 @@ export class ConfirmationPage extends BasePage{
 
     constructor(page: Page){
         super(page);
-        // this.orderSuccessMsg = page.getByText('Your Order has been successfully placed.');
         this.orderSuccessMsg = page.locator('#confirmation-message');
-        //await expect(page.locator('[data-test="shipping-address-heading"]')).toContainText('Your Order has been successfully placed.');
-
-
     }
 
     async orderSuccessMsgDisplayed(){

@@ -6,7 +6,6 @@ export class LandingPage extends BasePage {
 
     constructor(page: Page){
         super(page);
-        //this.signInLink = page.getByRole('link', { name: 'Sign In' });
         this.signInLink = page.locator('#signin');
     }
 
@@ -15,7 +14,6 @@ export class LandingPage extends BasePage {
     } 
     async signInLinkToBeVisible(){
         return await this.page.waitForSelector('#signin', {timeout: 15000});
-        //return await this.signInLink.isVisible();
     }
     
 
